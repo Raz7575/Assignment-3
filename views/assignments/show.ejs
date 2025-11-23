@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<h2><%= assignment.title %></h2>
+
+<p><strong>Course:</strong> <%= assignment.course %></p>
+<p><strong>Due:</strong> <%= assignment.dueDate.toDateString() %></p>
+
+<a href="/assignments/<%= assignment._id %>/edit" class="btn btn-warning">Edit</a>
+
+<form action="/assignments/<%= assignment._id %>/delete" method="POST" class="d-inline">
+  <button class="btn btn-danger" onclick="return confirm('Delete this assignment?')">Delete</button>
+</form>
+
+<a href="/assignments" class="btn btn-secondary ms-2">Back</a>
+
+<%- include('../partials/footer') %>
